@@ -1,0 +1,7 @@
+Private Sub Workbook_SheetChange(ByVal Sh As Object, ByVal Target As Range)
+    Me.Save
+End Sub
+
+Private Sub Workbook_SheetCalculate(ByVal Sh As Object)
+    Me.Save
+End Sub
