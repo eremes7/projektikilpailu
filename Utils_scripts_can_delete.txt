@@ -1,0 +1,38 @@
+Private Sub Workbook_SheetChange(ByVal Sh As Object, ByVal Target As Range)
+    Me.Save
+End Sub
+
+Private Sub Workbook_SheetCalculate(ByVal Sh As Object)
+    Me.Save
+End Sub
+
+
+
+=VASEN(SOLU("tiedostonnimi");ETSI("excelit";SOLU("tiedostonnimi"))-1)
+
+
+let
+    Lähde = Excel.CurrentWorkbook(){[Name="polku"]}[Content][Polku]{0},
+    FilePath = Lähde & "outputData.txt",
+    Source = Csv.Document(File.Contents(FilePath), [Delimiter=";", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+    #"Ylennetyt otsikot" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+    #"Korvattu arvo" = Table.ReplaceValue(#"Ylennetyt otsikot",".",",",Replacer.ReplaceValue,{"equity", "projectValue", "customizationConstant", "projectProfit"}),
+    #"Suodatetut rivit" = Table.SelectRows(#"Korvattu arvo", each ([playerId] = "2")),
+    #"Korvattu arvo1" = Table.ReplaceValue(#"Suodatetut rivit",".",",",Replacer.ReplaceText,{"equity", "projectValue", "customizationConstant", "projectProfit"}),
+    #"Muutettu tyyppi" = Table.TransformColumnTypes(#"Korvattu arvo1",{{"equity", type number}, {"projectValue", type number}, {"customizationConstant", type number}, {"projectProfit", type number}})
+in
+    #"Muutettu tyyppi"
+
+
+
+let
+    Lähde = Excel.CurrentWorkbook(){[Name="polku4"]}[Content][Polku]{0},
+    FilePath = Lähde & "outputData.txt",
+    Source = Csv.Document(File.Contents(FilePath), [Delimiter=";", Columns=10, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+    #"Ylennetyt otsikot" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+    #"Korvattu arvo" = Table.ReplaceValue(#"Ylennetyt otsikot",".",",",Replacer.ReplaceValue,{"equity", "projectValue", "customizationConstant", "projectProfit"}),
+    #"Suodatetut rivit" = Table.SelectRows(#"Korvattu arvo", each ([playerId] = "2")),
+    #"Korvattu arvo1" = Table.ReplaceValue(#"Suodatetut rivit",".",",",Replacer.ReplaceText,{"equity", "projectValue", "customizationConstant", "projectProfit", "projectAverageValue", "projectAverageCustomization"}),
+    #"Muutettu tyyppi" = Table.TransformColumnTypes(#"Korvattu arvo1",{{"equity", type number}, {"projectValue", type number}, {"customizationConstant", type number}, {"projectProfit", type number}, {"projectAverageValue", type number}, {"projectAverageCustomization", type number}})
+in
+    #"Muutettu tyyppi"

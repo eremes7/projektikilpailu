@@ -1,0 +1,2020 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+*************************************************
+	         AnyLogic Project File
+*************************************************
+-->
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.2.202410172123" AlpVersion="8.9.2">
+<Model>
+	<Id>1729514076140</Id>
+	<Name><![CDATA[sicuLogic]]></Name>
+	<EngineVersion>6</EngineVersion>
+	<JavaPackageName><![CDATA[siculogic]]></JavaPackageName>
+	<ModelTimeUnit><![CDATA[Second]]></ModelTimeUnit>
+	
+	<Folders>
+		
+	</Folders>
+	<ActiveObjectClasses>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1729514076143</Id>
+			<Name><![CDATA[Main]]></Name>
+			<Import><![CDATA[import java.util.ArrayList;
+import java.util.List;]]></Import>
+			<Generic>false</Generic>
+			<GenericParameter>
+				<Id>1729514076149</Id>
+				<Name><![CDATA[1729514076149]]></Name>
+				<GenericParameterValue Class="CodeValue">
+					<Code><![CDATA[T extends Agent]]></Code>
+				</GenericParameterValue>
+				<GenericParameterLabel><![CDATA[Generic parameter:]]></GenericParameterLabel>
+			</GenericParameter>
+			<FlowChartsUsage>ENTITY</FlowChartsUsage>
+			<SamplesToKeep>100</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>true</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor/>
+			<SceneSkybox>null</SceneSkybox>
+			<AgentProperties>
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+				<RotateAnimationVertically>false</RotateAnimationVertically>
+				<VelocityCode Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+				</VelocityCode>
+				<PhysicalLength Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalLength>
+				<PhysicalWidth Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalWidth>
+				<PhysicalHeight Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalHeight>
+			</AgentProperties>
+			<EnvironmentProperties>
+					<EnableSteps>false</EnableSteps>
+					<StepDurationCode Class="CodeUnitValue">
+						<Code><![CDATA[1.0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</StepDurationCode>
+					<SpaceType>CONTINUOUS</SpaceType>
+					<WidthCode><![CDATA[500]]></WidthCode>
+					<HeightCode><![CDATA[500]]></HeightCode>
+					<ZHeightCode><![CDATA[0]]></ZHeightCode>
+					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
+					<RowsCountCode><![CDATA[100]]></RowsCountCode>
+					<NeigborhoodType>MOORE</NeigborhoodType>
+					<LayoutType>USER_DEF</LayoutType>
+					<NetworkType>USER_DEF</NetworkType>
+					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
+					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
+					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
+					<MCode><![CDATA[10]]></MCode>
+			</EnvironmentProperties>
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1729584000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</RecurrenceCode>
+			</DatasetsCreationProperties>
+			<ScaleRuler>
+				<Id>1729514076146</Id>
+				<Name><![CDATA[scale]]></Name>
+				<X>0</X><Y>-150</Y>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<Length>100</Length>
+				<Rotation>0</Rotation>
+				<ScaleType>BASED_ON_LENGTH</ScaleType>
+				<ModelLength>10</ModelLength>
+				<LengthUnits>METER</LengthUnits>
+				<Scale>10</Scale>
+				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+			</ScaleRuler>
+			<CurrentLevel>1729514076150</CurrentLevel>
+			<ConnectionsId>1729514076144</ConnectionsId>
+			<Variables>
+				<Variable Class="Parameter">
+					<Id>1729519893175</Id>
+					<Name><![CDATA[playerAmount]]></Name>
+					<X>520</X><Y>20</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1729519893173</Id>
+							<Label><![CDATA[playerAmount]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1730135352775</Id>
+					<Name><![CDATA[projectsPerRound]]></Name>
+					<X>520</X><Y>40</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[10]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1730135352773</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1730135403570</Id>
+					<Name><![CDATA[projectBaseValue]]></Name>
+					<X>520</X><Y>60</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[1000]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1730135403568</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1730193465541</Id>
+					<Name><![CDATA[productSystemUpgradeCost]]></Name>
+					<X>520</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[100]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1730193465539</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+			</Variables>
+			<AgentLinks>
+				<AgentLink>
+					<Id>1729514076144</Id>
+					<Name><![CDATA[connections]]></Name>
+					<X>80</X><Y>-20</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<HandleReceiveInConnections>false</HandleReceiveInConnections>
+					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+					<AgentLinkBidirectional>true</AgentLinkBidirectional>
+					<MessageType><![CDATA[Object]]></MessageType>
+					<LineStyle>SOLID</LineStyle>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineZOrder>UNDER_AGENTS</LineZOrder>
+					<LineArrow>NONE</LineArrow>
+					<LineArrowPosition>END</LineArrowPosition>
+				</AgentLink>
+			</AgentLinks>
+
+			<EmbeddedObjects>
+				<EmbeddedObject>
+					<Id>1729514339545</Id>
+					<Name><![CDATA[players]]></Name>
+					<X>180</X><Y>100</Y>
+					<Label><X>-30</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<PresentationId>1729514340995</PresentationId>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[siculogic]]></PackageName>
+						<ClassName><![CDATA[Player]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[siculogic]]></PackageName>
+							<ClassName><![CDATA[Player]]></ClassName>
+							<ItemName><![CDATA[1729514320776]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+					</Parameters>
+					<ReplicationFlag>true</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InEnvironment>true</InEnvironment>	
+					<InitialLocationType>XYZ</InitialLocationType>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1729516010541</Id>
+					<Name><![CDATA[gameRound]]></Name>
+					<X>180</X><Y>40</Y>
+					<Label><X>-40</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[siculogic]]></PackageName>
+						<ClassName><![CDATA[gameRound]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[siculogic]]></PackageName>
+							<ClassName><![CDATA[gameRound]]></ClassName>
+							<ItemName><![CDATA[1729516005204]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+					</Parameters>
+					<ReplicationFlag>true</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InEnvironment>true</InEnvironment>	
+					<InitialLocationType>XYZ</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+			</EmbeddedObjects>
+
+			<Presentation>
+				<Level>
+					<Id>1729514076150</Id>
+					<Name><![CDATA[level]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+
+			<Presentation>
+				<EmbeddedObjectPresentation>
+					<Id>1729514340995</Id>
+					<Name><![CDATA[players_presentation]]></Name>
+					<X>200</X><Y>120</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
+					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
+					<Latitude>0.0</Latitude>
+					<Longitude>0.0</Longitude>
+				</EmbeddedObjectPresentation>
+				<Control Type="Button">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1729516618001</Id>
+					<Name><![CDATA[newRound]]></Name>
+					<X>20</X><Y>80</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[this.add_gameRound();
+int currentRound = gameRound.size() - 1;
+
+gameRound.get( currentRound ).set_int_gameRound( currentRound );
+
+gameRound.get( currentRound ).getNewRoundData();
+
+gameRound.get( currentRound ).updateInvestmentChanges();
+
+]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<LabelText><![CDATA[newRound]]></LabelText>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Button">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1729519555774</Id>
+					<Name><![CDATA[drawPlayers]]></Name>
+					<X>20</X><Y>120</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[
+for( int playerNumber = 0; playerNumber < players.size(); playerNumber++ ){
+
+
+	players.get(playerNumber).jumpTo(200, playerNumber*100+100);
+	players.get(playerNumber).updateTexts();
+	
+}]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<LabelText><![CDATA[drawPlayers]]></LabelText>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Button">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1729519812149</Id>
+					<Name><![CDATA[createPlayers]]></Name>
+					<X>20</X><Y>40</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[for(int i = 0; i < playerAmount; i++){
+	this.add_players();
+	players.get(players.size() - 1).playerId = i+1;
+}
+
+
+
+]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<LabelText><![CDATA[createPlayers]]></LabelText>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Button">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1730135445874</Id>
+					<Name><![CDATA[createProjects]]></Name>
+					<X>20</X><Y>260</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="170" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[Random random = new Random();
+
+for (int i = 1; i <= projectsPerRound; i++){
+
+	String name = "Project " + gameRound.size() + "_" + i;
+	
+	double customizationConstant = random.nextDouble();
+	
+	Project project = new Project(name, customizationConstant, projectBaseValue);
+	
+	gameRound.get(gameRound.size() - 1).Projects.add(project);
+
+}
+
+traceln(gameRound.get(gameRound.size() - 1).Projects);]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<LabelText><![CDATA[createProjects]]></LabelText>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Button">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1730137447433</Id>
+					<Name><![CDATA[shareRoundProjects]]></Name>
+					<X>20</X><Y>310</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="170" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[
+gameRound.get(gameRound.size() - 1).runBiddings();
+
+
+]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<LabelText><![CDATA[shareRoundProjects]]></LabelText>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Button">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1730147907645</Id>
+					<Name><![CDATA[writeOutputData]]></Name>
+					<X>20</X><Y>380</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="120" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[gameRound.get(gameRound.size() - 1).writeRoundOutput();]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<LabelText><![CDATA[writeOutputData]]></LabelText>
+					</ExtendedProperties>
+				</Control>
+			</Presentation>
+
+				</Level>
+			</Presentation>
+
+		</ActiveObjectClass>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1729514320770</Id>
+			<Name><![CDATA[Player]]></Name>
+			<Generic>false</Generic>
+			<GenericParameter>
+				<Id>1729514320776</Id>
+				<Name><![CDATA[1729514320776]]></Name>
+				<GenericParameterValue Class="CodeValue">
+					<Code><![CDATA[T extends Agent]]></Code>
+				</GenericParameterValue>
+				<GenericParameterLabel><![CDATA[Generic parameter:]]></GenericParameterLabel>
+			</GenericParameter>
+			<FlowChartsUsage>ENTITY</FlowChartsUsage>
+			<SamplesToKeep>100</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>true</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor/>
+			<SceneSkybox>null</SceneSkybox>
+			<AgentProperties>
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+				<RotateAnimationVertically>false</RotateAnimationVertically>
+				<VelocityCode Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+				</VelocityCode>
+				<PhysicalLength Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalLength>
+				<PhysicalWidth Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalWidth>
+				<PhysicalHeight Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalHeight>
+			</AgentProperties>
+			<EnvironmentProperties>
+					<EnableSteps>false</EnableSteps>
+					<StepDurationCode Class="CodeUnitValue">
+						<Code><![CDATA[1.0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</StepDurationCode>
+					<SpaceType>CONTINUOUS</SpaceType>
+					<WidthCode><![CDATA[500]]></WidthCode>
+					<HeightCode><![CDATA[500]]></HeightCode>
+					<ZHeightCode><![CDATA[0]]></ZHeightCode>
+					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
+					<RowsCountCode><![CDATA[100]]></RowsCountCode>
+					<NeigborhoodType>MOORE</NeigborhoodType>
+					<LayoutType>USER_DEF</LayoutType>
+					<NetworkType>USER_DEF</NetworkType>
+					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
+					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
+					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
+					<MCode><![CDATA[10]]></MCode>
+			</EnvironmentProperties>
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1729584000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</RecurrenceCode>
+			</DatasetsCreationProperties>
+			<ScaleRuler>
+				<Id>1729514320773</Id>
+				<Name><![CDATA[scale]]></Name>
+				<X>0</X><Y>-150</Y>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<Length>100</Length>
+				<Rotation>0</Rotation>
+				<ScaleType>BASED_ON_LENGTH</ScaleType>
+				<ModelLength>10</ModelLength>
+				<LengthUnits>METER</LengthUnits>
+				<Scale>10</Scale>
+				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+			</ScaleRuler>
+			<CurrentLevel>1729514320777</CurrentLevel>
+			<ConnectionsId>1729514320771</ConnectionsId>
+			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1729519264564</Id>
+					<Name><![CDATA[playerName]]></Name>
+					<X>220</X><Y>40</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[String]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1729519271092</Id>
+					<Name><![CDATA[customBidLowerLimit]]></Name>
+					<X>220</X><Y>60</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1729519276080</Id>
+					<Name><![CDATA[customBidUpperLimit]]></Name>
+					<X>220</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1729519277691</Id>
+					<Name><![CDATA[investmentAmount]]></Name>
+					<X>220</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1730156819528</Id>
+					<Name><![CDATA[playerId]]></Name>
+					<X>220</X><Y>10</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1730158575538</Id>
+					<Name><![CDATA[equity]]></Name>
+					<X>400</X><Y>10</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1730192944522</Id>
+					<Name><![CDATA[investmentKickInRound]]></Name>
+					<X>220</X><Y>160</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[-1]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1730195611758</Id>
+					<Name><![CDATA[upgradedProductSystem]]></Name>
+					<X>220</X><Y>180</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[boolean]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1730148173638</Id>
+					<Name><![CDATA[wonProjects]]></Name>
+					<X>400</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Project]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+			</Variables>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1729523207918</Id>
+					<Name><![CDATA[updateTexts]]></Name>
+					<X>20</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[
+playerNameText.setText(playerName);
+lowerLimitText.setText(customBidLowerLimit);
+upperLimitText.setText(customBidUpperLimit);
+invesmentAmountText.setText(investmentAmount);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[boolean]]></ReturnType>
+					<Id>1730138378500</Id>
+					<Name><![CDATA[canBid]]></Name>
+					<X>20</X><Y>160</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[project]]></Name>
+						<Type><![CDATA[Project]]></Type>
+					</Parameter>
+					<Body><![CDATA[
+double customizationConstant = project.getCustomizationConstant();
+
+return customizationConstant >= customBidLowerLimit && customizationConstant <= customBidUpperLimit;
+]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1730192358184</Id>
+					<Name><![CDATA[calculateProfit]]></Name>
+					<X>20</X><Y>180</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[project]]></Name>
+						<Type><![CDATA[Project]]></Type>
+					</Parameter>
+					<Body><![CDATA[
+if(upgradedProductSystem){
+	traceln("ASLJF" + upgradedProductSystem + this.playerName);
+	double calculatedProfit = project.getProjectValue() - (project.getProjectValue() * 0.9);
+	
+	project.setProjectProfit(calculatedProfit);
+
+
+}
+
+]]></Body>
+				</Function>
+			</Functions>
+			<AgentLinks>
+				<AgentLink>
+					<Id>1729514320771</Id>
+					<Name><![CDATA[connections]]></Name>
+					<X>50</X><Y>-50</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<HandleReceiveInConnections>false</HandleReceiveInConnections>
+					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+					<AgentLinkBidirectional>true</AgentLinkBidirectional>
+					<MessageType><![CDATA[Object]]></MessageType>
+					<LineStyle>SOLID</LineStyle>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineZOrder>UNDER_AGENTS</LineZOrder>
+					<LineArrow>NONE</LineArrow>
+					<LineArrowPosition>END</LineArrowPosition>
+				</AgentLink>
+			</AgentLinks>
+
+			<ContainerLinks>
+				<ContainerLink>
+					<Id>1729514341004</Id>
+					<Name><![CDATA[main]]></Name>
+					<X>50</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[siculogic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
+			</ContainerLinks>
+
+			<Presentation>
+				<Level>
+					<Id>1729514320777</Id>
+					<Name><![CDATA[level]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+
+			<Presentation>
+				<Group>
+					<Id>1729514320780</Id>
+					<Name><![CDATA[factory]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Polyline>
+					<Id>1729514320782</Id>
+					<Name><![CDATA[_ps287]]></Name>
+					<X>0</X><Y>15</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>1342177280</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>6</X><Y>-1</Y><Z>0</Z></Point>
+					   <Point><X>4</X><Y>-2</Y><Z>0</Z></Point>
+					   <Point><X>10</X><Y>-3</Y><Z>0</Z></Point>
+					   <Point><X>8</X><Y>-4</Y><Z>0</Z></Point>
+					   <Point><X>14</X><Y>-5</Y><Z>0</Z></Point>
+					   <Point><X>12</X><Y>-6</Y><Z>0</Z></Point>
+					   <Point><X>14</X><Y>-6</Y><Z>0</Z></Point>
+					   <Point><X>16</X><Y>-5</Y><Z>0</Z></Point>
+					   <Point><X>18</X><Y>-6</Y><Z>0</Z></Point>
+					   <Point><X>16</X><Y>-7</Y><Z>0</Z></Point>
+					   <Point><X>16</X><Y>-8</Y><Z>0</Z></Point>
+					   <Point><X>12</X><Y>-10</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>-2</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Polyline>
+				<Polyline>
+					<Id>1729514320784</Id>
+					<Name><![CDATA[_ps288]]></Name>
+					<X>-16</X><Y>7</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-3065088</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-6</Y><Z>0</Z></Point>
+					   <Point><X>12</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>12</X><Y>6</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Polyline>
+				<Polyline>
+					<Id>1729514320786</Id>
+					<Name><![CDATA[_ps289]]></Name>
+					<X>12</X><Y>-1</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-507904</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>-2</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>2</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Polyline>
+				<Curve ControlPoints="true">
+					<Id>1729514320788</Id>
+					<Name><![CDATA[_ps290]]></Name>
+					<X>2</X><Y>-4</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-4447488</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>2</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>2</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>-10</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>-11</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>-12</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-12</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-11</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-11</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Curve>
+				<Curve ControlPoints="true">
+					<Id>1729514320790</Id>
+					<Name><![CDATA[_ps291]]></Name>
+					<X>8</X><Y>-1</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-4447488</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>2</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>2</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>-10</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>-11</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>-12</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-12</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-11</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-11</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Curve>
+				<Polyline>
+					<Id>1729514320792</Id>
+					<Name><![CDATA[_ps292]]></Name>
+					<X>-4</X><Y>7</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-507904</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>-12</X><Y>-6</Y><Z>0</Z></Point>
+					   <Point><X>-8</X><Y>-12</Y><Z>0</Z></Point>
+					   <Point><X>-6</X><Y>-11</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>-14</Y><Z>0</Z></Point>
+					   <Point><X>-2</X><Y>-13</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-16</Y><Z>0</Z></Point>
+					   <Point><X>12</X><Y>-10</Y><Z>0</Z></Point>
+					   <Point><X>12</X><Y>-6</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Polyline>
+				<Polyline>
+					<Id>1729514320794</Id>
+					<Name><![CDATA[_ps293]]></Name>
+					<X>-4</X><Y>13</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-4447488</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>16</X><Y>-8</Y><Z>0</Z></Point>
+					   <Point><X>16</X><Y>-14</Y><Z>0</Z></Point>
+					   <Point><X>12</X><Y>-12</Y><Z>0</Z></Point>
+					   <Point><X>12</X><Y>-16</Y><Z>0</Z></Point>
+					   <Point><X>8</X><Y>-10</Y><Z>0</Z></Point>
+					   <Point><X>8</X><Y>-14</Y><Z>0</Z></Point>
+					   <Point><X>4</X><Y>-8</Y><Z>0</Z></Point>
+					   <Point><X>4</X><Y>-12</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-6</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Polyline>
+				<Polyline>
+					<Id>1729514320796</Id>
+					<Name><![CDATA[_ps294]]></Name>
+					<X>0</X><Y>11</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-9039360</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>2</X><Y>-1</Y><Z>0</Z></Point>
+					   <Point><X>2</X><Y>-4</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-3</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Polyline>
+				<Polyline>
+					<Id>1729514320798</Id>
+					<Name><![CDATA[_ps295]]></Name>
+					<X>4</X><Y>9</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-9039360</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>2</X><Y>-1</Y><Z>0</Z></Point>
+					   <Point><X>2</X><Y>-4</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-3</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Polyline>
+				<Polyline>
+					<Id>1729514320800</Id>
+					<Name><![CDATA[_ps296]]></Name>
+					<X>8</X><Y>7</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-9039360</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>2</X><Y>-1</Y><Z>0</Z></Point>
+					   <Point><X>2</X><Y>-4</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-3</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Polyline>
+				<Curve ControlPoints="true">
+					<Id>1729514320802</Id>
+					<Name><![CDATA[_ps297]]></Name>
+					<X>12</X><Y>-1</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-12187648</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor/>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>6</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>6</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>6</Y><Z>0</Z></Point>
+					   <Point><X>-16</X><Y>14</Y><Z>0</Z></Point>
+					   <Point><X>-16</X><Y>14</Y><Z>0</Z></Point>
+					   <Point><X>-16</X><Y>14</Y><Z>0</Z></Point>
+					   <Point><X>-28</X><Y>8</Y><Z>0</Z></Point>
+					   <Point><X>-28</X><Y>8</Y><Z>0</Z></Point>
+					   <Point><X>-28</X><Y>8</Y><Z>0</Z></Point>
+					   <Point><X>-28</X><Y>2</Y><Z>0</Z></Point>
+					   <Point><X>-28</X><Y>2</Y><Z>0</Z></Point>
+					   <Point><X>-28</X><Y>2</Y><Z>0</Z></Point>
+					   <Point><X>-24</X><Y>-4</Y><Z>0</Z></Point>
+					   <Point><X>-24</X><Y>-4</Y><Z>0</Z></Point>
+					   <Point><X>-24</X><Y>-4</Y><Z>0</Z></Point>
+					   <Point><X>-22</X><Y>-3</Y><Z>0</Z></Point>
+					   <Point><X>-22</X><Y>-3</Y><Z>0</Z></Point>
+					   <Point><X>-22</X><Y>-3</Y><Z>0</Z></Point>
+					   <Point><X>-20</X><Y>-6</Y><Z>0</Z></Point>
+					   <Point><X>-20</X><Y>-6</Y><Z>0</Z></Point>
+					   <Point><X>-20</X><Y>-6</Y><Z>0</Z></Point>
+					   <Point><X>-18</X><Y>-5</Y><Z>0</Z></Point>
+					   <Point><X>-18</X><Y>-5</Y><Z>0</Z></Point>
+					   <Point><X>-18</X><Y>-5</Y><Z>0</Z></Point>
+					   <Point><X>-16</X><Y>-8</Y><Z>0</Z></Point>
+					   <Point><X>-16</X><Y>-8</Y><Z>0</Z></Point>
+					   <Point><X>-16</X><Y>-8</Y><Z>0</Z></Point>
+					   <Point><X>-14</X><Y>-7</Y><Z>0</Z></Point>
+					   <Point><X>-14</X><Y>-7</Y><Z>0</Z></Point>
+					   <Point><X>-14</X><Y>-7</Y><Z>0</Z></Point>
+					   <Point><X>-14</X><Y>-13</Y><Z>0</Z></Point>
+					   <Point><X>-14</X><Y>-14</Y><Z>0</Z></Point>
+					   <Point><X>-14</X><Y>-15</Y><Z>0</Z></Point>
+					   <Point><X>-10</X><Y>-15</Y><Z>0</Z></Point>
+					   <Point><X>-10</X><Y>-14</Y><Z>0</Z></Point>
+					   <Point><X>-10</X><Y>-13</Y><Z>0</Z></Point>
+					   <Point><X>-10</X><Y>-5</Y><Z>0</Z></Point>
+					   <Point><X>-10</X><Y>-5</Y><Z>0</Z></Point>
+					   <Point><X>-10</X><Y>-5</Y><Z>0</Z></Point>
+					   <Point><X>-8</X><Y>-4</Y><Z>0</Z></Point>
+					   <Point><X>-8</X><Y>-4</Y><Z>0</Z></Point>
+					   <Point><X>-8</X><Y>-4</Y><Z>0</Z></Point>
+					   <Point><X>-8</X><Y>-10</Y><Z>0</Z></Point>
+					   <Point><X>-8</X><Y>-11</Y><Z>0</Z></Point>
+					   <Point><X>-8</X><Y>-12</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>-12</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>-11</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>-10</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>-2</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>-2</Y><Z>0</Z></Point>
+					   <Point><X>-4</X><Y>-2</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Curve>
+			</Presentation>
+
+				</Group>
+				<Text>
+					<Id>1729523069336</Id>
+					<Name><![CDATA[playerNameText]]></Name>
+					<X>20</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[playerNameText]]></Text>
+					<Font>
+						<Name>Impact</Name>
+						<Size>22</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1729523126322</Id>
+					<Name><![CDATA[lowerLimitText]]></Name>
+					<X>20</X><Y>20</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[lowerLimitText]]></Text>
+					<Font>
+						<Name>Impact</Name>
+						<Size>20</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1729523138114</Id>
+					<Name><![CDATA[upperLimitText]]></Name>
+					<X>20</X><Y>40</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[upperLimitText]]></Text>
+					<Font>
+						<Name>Impact</Name>
+						<Size>20</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1729523143650</Id>
+					<Name><![CDATA[invesmentAmountText]]></Name>
+					<X>20</X><Y>60</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[invesmentAmountText]]></Text>
+					<Font>
+						<Name>Impact</Name>
+						<Size>20</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Presentation>
+
+				</Level>
+			</Presentation>
+
+		</ActiveObjectClass>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1729516005198</Id>
+			<Name><![CDATA[gameRound]]></Name>
+			<Generic>false</Generic>
+			<GenericParameter>
+				<Id>1729516005204</Id>
+				<Name><![CDATA[1729516005204]]></Name>
+				<GenericParameterValue Class="CodeValue">
+					<Code><![CDATA[T extends Agent]]></Code>
+				</GenericParameterValue>
+				<GenericParameterLabel><![CDATA[Generic parameter:]]></GenericParameterLabel>
+			</GenericParameter>
+			<FlowChartsUsage>ENTITY</FlowChartsUsage>
+			<SamplesToKeep>100</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>true</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor/>
+			<SceneSkybox>null</SceneSkybox>
+			<AgentProperties>
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+				<RotateAnimationVertically>false</RotateAnimationVertically>
+				<VelocityCode Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+				</VelocityCode>
+				<PhysicalLength Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalLength>
+				<PhysicalWidth Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalWidth>
+				<PhysicalHeight Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalHeight>
+			</AgentProperties>
+			<EnvironmentProperties>
+					<EnableSteps>false</EnableSteps>
+					<StepDurationCode Class="CodeUnitValue">
+						<Code><![CDATA[1.0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</StepDurationCode>
+					<SpaceType>CONTINUOUS</SpaceType>
+					<WidthCode><![CDATA[500]]></WidthCode>
+					<HeightCode><![CDATA[500]]></HeightCode>
+					<ZHeightCode><![CDATA[0]]></ZHeightCode>
+					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
+					<RowsCountCode><![CDATA[100]]></RowsCountCode>
+					<NeigborhoodType>MOORE</NeigborhoodType>
+					<LayoutType>USER_DEF</LayoutType>
+					<NetworkType>USER_DEF</NetworkType>
+					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
+					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
+					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
+					<MCode><![CDATA[10]]></MCode>
+			</EnvironmentProperties>
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1729584000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</RecurrenceCode>
+			</DatasetsCreationProperties>
+			<ScaleRuler>
+				<Id>1729516005201</Id>
+				<Name><![CDATA[scale]]></Name>
+				<X>0</X><Y>-150</Y>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<Length>100</Length>
+				<Rotation>0</Rotation>
+				<ScaleType>BASED_ON_LENGTH</ScaleType>
+				<ModelLength>10</ModelLength>
+				<LengthUnits>METER</LengthUnits>
+				<Scale>10</Scale>
+				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+			</ScaleRuler>
+			<CurrentLevel>1729516005205</CurrentLevel>
+			<ConnectionsId>1729516005199</ConnectionsId>
+			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1730193902700</Id>
+					<Name><![CDATA[int_gameRound]]></Name>
+					<X>300</X><Y>20</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1730136515607</Id>
+					<Name><![CDATA[Projects]]></Name>
+					<X>20</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Project]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+			</Variables>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1729516110623</Id>
+					<Name><![CDATA[getNewRoundData]]></Name>
+					<X>20</X><Y>50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[/*
+
+AnyLogic caches opened files so to update the values we force
+recaching by creating new agent and looking up the updated data from txt
+
+*/
+
+gameRoundData.readLine(); //first line is headers
+
+for( int playerNumber = 0; playerNumber < main.players.size(); playerNumber++ ){
+
+	if( gameRoundData.canReadMore() ){
+	
+		
+		gameRoundData.readInt();//1st element is playerNumber. can be skipped.
+		String playerName = gameRoundData.readString();
+		double customBidLowerLimit = gameRoundData.readDouble();
+		double customBidUpperLimit = gameRoundData.readDouble();
+		double investmentAmount = gameRoundData.readDouble();
+		
+		
+		main.players.get(playerNumber).playerName = playerName;
+		main.players.get(playerNumber).customBidLowerLimit = customBidLowerLimit;
+		main.players.get(playerNumber).customBidUpperLimit = customBidUpperLimit;
+		main.players.get(playerNumber).investmentAmount = investmentAmount;
+	
+
+	}
+}
+
+
+	]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1730137821915</Id>
+					<Name><![CDATA[runBiddings]]></Name>
+					<X>21</X><Y>169</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[for (Project project : Projects) {
+	Random random = new Random();
+	List<Player> eligiblePlayers = new ArrayList<>();
+	
+	for (Player player : main.players){
+	
+		if (player.canBid(project)) {
+			eligiblePlayers.add(player);
+		}
+	}
+	
+	if (!eligiblePlayers.isEmpty()) {
+                Player winner = eligiblePlayers.get(random.nextInt(eligiblePlayers.size()));
+                traceln(project + " won by " + winner.playerName);
+                winner.calculateProfit(project);
+                winner.wonProjects.add(project);
+	} else {
+				traceln("No winners for the project" + project);
+            }
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1730147877346</Id>
+					<Name><![CDATA[writeRoundOutput]]></Name>
+					<X>21</X><Y>229</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[
+
+
+for (Player player : main.players) {
+    if (!player.wonProjects.isEmpty()) {
+        for (Project project : player.wonProjects) {
+            outputDataFile.println(
+            
+            	//Check format! --- 1st. row in the txt file
+            	main.gameRound.size() + ";" +  
+                player.playerId + ";" +           // PlayerIndex for Excel sort
+                player.playerName + ";" +
+                player.equity + ";" +
+                project.getName() + ";" +
+                project.getProjectValue() + ";" +
+                project.getCustomizationConstant() + ";" +
+                project.getProjectProfit()
+                
+            );
+        }
+    } else {
+        traceln(" ");
+    }
+}
+
+
+outputDataFile.close();
+]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1730193243513</Id>
+					<Name><![CDATA[updateInvestmentChanges]]></Name>
+					<X>40</X><Y>120</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[int currentRound = main.gameRound.size() - 1;
+
+for (Player player : main.players) {
+
+	//If not upgraded check investments
+    if(!player.upgradedProductSystem){
+    
+    	if( (player.investmentAmount >= 100) && player.investmentKickInRound==-1){
+    	
+    		player.investmentKickInRound = currentRound + 1;
+    	
+    	}
+    	
+    	if( player.investmentKickInRound > -1 && currentRound >= player.investmentKickInRound + 2) {
+            
+            player.upgradedProductSystem = true;
+            
+        }
+    
+    }
+    
+}
+]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[int]]></ReturnType>
+					<Id>1730193927286</Id>
+					<Name><![CDATA[set_int_gameRound]]></Name>
+					<X>300</X><Y>40</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[gameRoundInt]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[int_gameRound = gameRoundInt;
+
+return int_gameRound;]]></Body>
+				</Function>
+			</Functions>
+			<Connectivity>
+				<TextFile>
+					<Id>1729516053790</Id>
+					<Name><![CDATA[gameRoundData]]></Name>
+					<X>20</X><Y>20</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<FileType>FILE</FileType>
+					<Url><![CDATA[]]></Url>
+					<ResourceReference>
+						<PackageName><![CDATA[siculogic]]></PackageName>
+						<ClassName><![CDATA[master_input.txt]]></ClassName>
+					</ResourceReference>
+					<FileMode>READ</FileMode>
+					<CharsetName>null</CharsetName>
+					<Separators>
+	</Separators>
+				</TextFile>
+				<TextFile>
+					<Id>1730147844023</Id>
+					<Name><![CDATA[outputDataFile]]></Name>
+					<X>21</X><Y>199</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<FileType>FILE</FileType>
+					<Url><![CDATA[]]></Url>
+					<ResourceReference>
+						<PackageName><![CDATA[siculogic]]></PackageName>
+						<ClassName><![CDATA[outputData.txt]]></ClassName>
+					</ResourceReference>
+					<FileMode>WRITE_APPEND</FileMode>
+					<CharsetName>null</CharsetName>
+					<Separators></Separators>
+				</TextFile>
+			</Connectivity>
+			<AgentLinks>
+				<AgentLink>
+					<Id>1729516005199</Id>
+					<Name><![CDATA[connections]]></Name>
+					<X>50</X><Y>-50</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<HandleReceiveInConnections>false</HandleReceiveInConnections>
+					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+					<AgentLinkBidirectional>true</AgentLinkBidirectional>
+					<MessageType><![CDATA[Object]]></MessageType>
+					<LineStyle>SOLID</LineStyle>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineZOrder>UNDER_AGENTS</LineZOrder>
+					<LineArrow>NONE</LineArrow>
+					<LineArrowPosition>END</LineArrowPosition>
+				</AgentLink>
+			</AgentLinks>
+
+			<ContainerLinks>
+				<ContainerLink>
+					<Id>1729516012712</Id>
+					<Name><![CDATA[main]]></Name>
+					<X>50</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[siculogic]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
+			</ContainerLinks>
+
+			<Presentation>
+				<Level>
+					<Id>1729516005205</Id>
+					<Name><![CDATA[level]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+
+
+				</Level>
+			</Presentation>
+
+		</ActiveObjectClass>
+	</ActiveObjectClasses>
+	<DifferentialEquationsMethod>EULER</DifferentialEquationsMethod>
+	<MixedEquationsMethod>RK45_NEWTON</MixedEquationsMethod>
+	<AlgebraicEquationsMethod>MODIFIED_NEWTON</AlgebraicEquationsMethod>
+	<AbsoluteAccuracy>1.0E-5</AbsoluteAccuracy>
+	<FixedTimeStep>0.001</FixedTimeStep>
+	<RelativeAccuracy>1.0E-5</RelativeAccuracy>
+	<TimeAccuracy>1.0E-5</TimeAccuracy>
+	<Frame>
+		<Width>1000</Width>
+		<Height>600</Height>
+	</Frame>
+	<Database>
+		<Logging>false</Logging>
+		<AutoExport>false</AutoExport>
+		<ShutdownCompact>false</ShutdownCompact>
+		<ImportSettings>
+		</ImportSettings>
+		<ExportSettings>
+		</ExportSettings>
+	</Database>
+
+	<RunConfiguration ActiveObjectClassId="1729514076143">
+		<Id>1729514076155</Id>
+		<Name><![CDATA[RunConfiguration]]></Name>
+		<MaximumMemory>512</MaximumMemory>
+		<ModelTimeProperties>
+			<StopOption><![CDATA[Stop at specified time]]></StopOption>
+			<InitialDate><![CDATA[1729468800000]]></InitialDate>	
+			<InitialTime><![CDATA[0.0]]></InitialTime>	
+			<FinalDate><![CDATA[1732147200000]]></FinalDate>	
+			<FinalTime><![CDATA[100.0]]></FinalTime>	
+		</ModelTimeProperties>
+		<AnimationProperties>
+			<StopNever>true</StopNever>
+			<ExecutionMode>realTimeScaled</ExecutionMode>
+			<RealTimeScale>1.0</RealTimeScale>
+			<EnableZoomAndPanning>true</EnableZoomAndPanning>
+			<EnableDeveloperPanel>false</EnableDeveloperPanel>
+			<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+		</AnimationProperties>
+		<Inputs>		
+		</Inputs>
+		<Outputs>
+		</Outputs>
+	</RunConfiguration>
+	<Experiments>	
+		<!--   =========   Simulation Experiment   ========  -->
+		<SimulationExperiment ActiveObjectClassId="1729514076143">
+			<Id>1729514076152</Id>
+			<Name><![CDATA[Simulation]]></Name>
+			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<MaximumMemory>512</MaximumMemory>
+			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+			<SeedValue>1</SeedValue>
+			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
+			<VmArgs><![CDATA[]]></VmArgs>
+			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1730133298912</Id>
+					<Name><![CDATA[playerAmountVariable]]></Name>
+					<X>200</X><Y>110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[2]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+			</Variables>
+
+			<Presentation>
+				<Text>
+					<Id>1729514076154</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>50</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12490271</Color>
+					<Text><![CDATA[sicuLogic]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>24</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1730132820777</Id>
+					<Name><![CDATA[playerAmountSlider]]></Name>
+					<X>50</X><Y>100</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[1]]></MinValue>
+						<MaxValue><![CDATA[10]]></MaxValue>
+						<Step><![CDATA[1]]></Step>
+						<LinkTo>true</LinkTo>
+						<Link>playerAmountVariable</Link>
+					</ExtendedProperties>
+				</Control>
+			</Presentation>
+
+			<Parameters>			
+				<Parameter>
+					<ParameterName><![CDATA[playerAmount]]></ParameterName>
+					<ParameterValue Class="CodeValue">
+						<Code><![CDATA[playerAmountVariable]]></Code>
+					</ParameterValue>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[projectsPerRound]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[projectBaseValue]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[productSystemUpgradeCost]]></ParameterName>
+				</Parameter>
+			</Parameters>			
+			<PresentationProperties>
+				<EnableZoomAndPanning>true</EnableZoomAndPanning>
+				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
+				<Title><![CDATA[sicuLogic : Simulation]]></Title>	
+				<EnableDeveloperPanel>true</EnableDeveloperPanel>
+				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+				<RealTimeScale>1.0</RealTimeScale>
+			</PresentationProperties>
+			<ModelTimeProperties>
+				<StopOption><![CDATA[Never]]></StopOption>
+				<InitialDate><![CDATA[1729468800000]]></InitialDate>	
+				<InitialTime><![CDATA[0.0]]></InitialTime>	
+				<FinalDate><![CDATA[1732147200000]]></FinalDate>	
+				<FinalTime><![CDATA[100.0]]></FinalTime>	
+			</ModelTimeProperties>
+			<BypassInitialScreen>false</BypassInitialScreen>
+		</SimulationExperiment>	
+	</Experiments>
+	<JavaClasses>
+		<!--   =========   Java Class   ========  -->
+		<JavaClass>
+			<Id>1730135739289</Id>
+			<Name><![CDATA[Project]]></Name>
+			<Text><![CDATA[import java.io.Serializable;
+
+public class Project implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private String name;
+    private double customizationConstant;
+    private double projectValue;
+    private double projectProfit = 0; // Alustetaan oletusarvoksi 0
+
+    /**
+     * Constructor with parameters
+     */
+    public Project(String name, double customizationConstant, double projectValue) {
+        this.name = name;
+        this.customizationConstant = Math.round(customizationConstant * 100.0) / 100.0;
+        this.projectValue = Math.round(projectValue * (1 + customizationConstant));
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getCustomizationConstant() {
+        return customizationConstant;
+    }
+    
+    public double getProjectValue() {
+        return projectValue;
+    }
+
+    public double getProjectProfit() {
+        return projectProfit;
+    }
+
+    public void setProjectProfit(double projectProfit) {
+        this.projectProfit = projectProfit;
+    }
+
+    @Override
+    public String toString() {
+        return "Project \n" +
+                "    name='" + name + "',\n" +
+                "    customizationConstant=" + customizationConstant + "\n" +
+                "    projectValue=" + projectValue + "\n" +
+                "    projectProfit=" + projectProfit + "\n" + 
+                " \n";
+    }
+}
+]]></Text>
+		</JavaClass>
+	</JavaClasses>
+	<ModelResources>
+		<Resource>
+			<Path><![CDATA[master_input.txt]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+			<Location>FILE_SYSTEM</Location>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[outputData.txt]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+			<Location>FILE_SYSTEM</Location>
+		</Resource>
+	</ModelResources>
+    <RequiredLibraryReference>
+		<LibraryName><![CDATA[com.anylogic.libraries.modules.markup_descriptors]]></LibraryName>
+		<VersionMajor>1</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>0</VersionBuild>
+    </RequiredLibraryReference>
+    <RequiredLibraryReference>
+		<LibraryName><![CDATA[com.anylogic.libraries.processmodeling]]></LibraryName>
+		<VersionMajor>8</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>5</VersionBuild>
+    </RequiredLibraryReference>
+</Model>
+</AnyLogicWorkspace>
