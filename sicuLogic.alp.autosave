@@ -481,9 +481,9 @@ for (int i = 1; i <= projectsPerRound; i++){
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[
-
-
 gameRound.get(gameRound.size() - 1).runBiddings();
+
+
 
 //move elsewhere
 gameRound.get(gameRound.size() - 1).calculateProjectValueAverage();
@@ -1161,7 +1161,7 @@ getEngine().run();
 				<Variable Class="PlainVariable">
 					<Id>1729519277691</Id>
 					<Name><![CDATA[productSysInvest]]></Name>
-					<X>250</X><Y>190</Y>
+					<X>260</X><Y>190</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1204,7 +1204,7 @@ getEngine().run();
 				<Variable Class="PlainVariable">
 					<Id>1730195611758</Id>
 					<Name><![CDATA[upgradedProductSystem]]></Name>
-					<X>370</X><Y>190</Y>
+					<X>380</X><Y>190</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1336,7 +1336,7 @@ getEngine().run();
 				<Variable Class="PlainVariable">
 					<Id>1732573599784</Id>
 					<Name><![CDATA[delayFees]]></Name>
-					<X>170</X><Y>320</Y>
+					<X>180</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1348,7 +1348,7 @@ getEngine().run();
 				<Variable Class="PlainVariable">
 					<Id>1732573683793</Id>
 					<Name><![CDATA[fixedCosts]]></Name>
-					<X>180</X><Y>280</Y>
+					<X>190</X><Y>280</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1390,7 +1390,7 @@ getEngine().run();
 				<Variable Class="PlainVariable">
 					<Id>1732709448561</Id>
 					<Name><![CDATA[delayedProduction]]></Name>
-					<X>250</X><Y>320</Y>
+					<X>260</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1492,6 +1492,7 @@ productionEfficiencyText.setText("-Production efficiency: " + Math.round(product
 double customizationConstant = project.getCustomizationConstant();
 
 return customizationConstant >= customBidLowerLimit && customizationConstant <= customBidUpperLimit;
+
 ]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -1508,7 +1509,8 @@ return customizationConstant >= customBidLowerLimit && customizationConstant <= 
 						<Name><![CDATA[project]]></Name>
 						<Type><![CDATA[Project]]></Type>
 					</Parameter>
-					<Body><![CDATA[double standardCosts = (1-project.getCustomizationConstant())*main.projectBaseValue*(2-productionEfficiency);
+					<Body><![CDATA[//Apufunktio
+double standardCosts = (1-project.getCustomizationConstant())*main.projectBaseValue*(2-productionEfficiency);
 
 double customCosts = project.getCustomizationConstant() * 2 * main.projectBaseValue*(2-productionEfficiency);
 
@@ -1522,6 +1524,7 @@ roundProfit+=profit;
 
 roundOnlyProfit+=profit;
 
+//MOVE THIS
 profitPerProject = roundProfit / wonProjects.size();
 
 
@@ -1707,10 +1710,11 @@ roundProfit-=capacityInvest*1000;
 						<Name><![CDATA[project]]></Name>
 						<Type><![CDATA[Project]]></Type>
 					</Parameter>
-					<Body><![CDATA[
+					<Body><![CDATA[project.setOwner(this);
 
-project.setOwner(this);
+//keksi tähän kommentti -> selitä kymppi.
 project.setProjectValue(this.calculateBid(project)/10);
+
 
 double newCustomizationConstant = project.getCustomizationConstant() - upgradedProductSystem;
 
@@ -1754,7 +1758,7 @@ if (newCustomizationConstant <= 0){
 					</Parameter>
 					<Body><![CDATA[double bid;
 
-double standardModuleQty = 100 - (project.getCustomizationConstant() - upgradedProductSystem)*100;
+double standardModuleQty = 100 - (project.getCustomizationConstant())*100;
 double customModuleQty = 100 - standardModuleQty;
 
 
@@ -2814,7 +2818,8 @@ for (Project project : Projects){
             player.roundOnlyProfit,
             this.hintBid,
             this.averageValue,
-            this.averageCustomization
+            this.averageCustomization,
+            
             
         );
 		traceln(outputLine);
